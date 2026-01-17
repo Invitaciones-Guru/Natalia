@@ -17,7 +17,6 @@ const musicBtn = document.getElementById('musicBtn');
 const music = document.getElementById('weddingMusic');
 let isPlaying = false; 
 
-// Autoplay al tocar pantalla
 document.body.addEventListener('click', function() {
     if (!isPlaying) {
         music.play().then(() => {
@@ -45,13 +44,11 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     e.preventDefault();
     const nombre = document.getElementById('guestName').value;
     const asistencia = document.getElementById('attendance').value;
-    
     let mensaje = asistencia === "si" ? `Hola Valentina, soy ${nombre}. ¡Sí asistiré a tus XVs! 💃` : `Hola Valentina, soy ${nombre}. No podré asistir, gracias por la invitación.`;
-    // REEMPLAZA EL NÚMERO AQUÍ: 52 + Lada + Número
     window.open(`https://wa.me/528112345678?text=${encodeURIComponent(mensaje)}`, '_blank');
 };
 
-// --- LIGHTBOX (VER FOTOS) ---
+// LIGHTBOX
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("img01");
 const closeBtn = document.getElementsByClassName("close-modal")[0];
