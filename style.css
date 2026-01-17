@@ -96,7 +96,7 @@ body {
 
 /* --- SAVE THE DATE (Diseño Referencia + Parallax Fijo) --- */
 .save-the-date-parallax, .rsvp-section-parallax {
-    background-image: url('foto_std.jpeg'); /* Imagen de fondo fija */
+    background-image: url('foto2.jpeg'); /* Imagen de fondo fija */
     background-position: center; background-size: cover;
     background-attachment: fixed; /* Efecto Parallax Fijo */
     height: 100vh; display: flex; align-items: center; justify-content: center;
