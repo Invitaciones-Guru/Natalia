@@ -4,17 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mis XV Años | Valentina</title>
-
-    <meta property="og:title" content="¡Estás invitado a mis XV Años! ✨">
-    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. Toca aquí para ver todos los detalles.">
-    <meta property="og:image" content="https://tudominio.com/portada.jpeg"> 
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_MX">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@400;500;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +14,7 @@
         <span id="musicText">♪ MÚSICA</span>
     </div>
     <audio id="weddingMusic" loop>
-        <source src="cancion.mp3" type="audio/mpeg">
+        <source src="cancion_xv.mp3" type="audio/mpeg">
     </audio>
 
     <header class="hero">
@@ -35,14 +27,13 @@
                 <span class="detail-text">2026</span>
             </div>
         </div>
-        <div class="scroll-indicator">↓</div>
     </header>
 
     <section class="parents-section">
         <div class="container" data-aos="fade-up">
-            <p class="script-font intro-styled">Con la bendición de Dios</p>
+            <p class="script-font intro-styled">Con la bendición de Dios y el amor incondicional de mi familia, celebro este nuevo capítulo en mi vida.</p>
             
-            <div class="parents-card-layout">
+            <div class="parents-grid-compact">
                 <div class="parents-group">
                     <p class="role-label">MIS PADRES</p>
                     <h3 class="parent-name">Mariana Garza</h3>
@@ -57,26 +48,31 @@
                     <h3 class="parent-name">Carlos Treviño</h3>
                 </div>
             </div>
-            
-            <p class="invite-text">Tenemos el honor de invitarte a celebrar este gran día.</p>
         </div>
     </section>
 
     <section class="save-the-date-parallax">
         <div class="std-overlay">
             <div class="std-content" data-aos="zoom-in">
-                <p class="std-label">RESERVA LA FECHA</p>
-                <h2 class="script-font std-title">Save the Date</h2>
-                <div class="std-date-display">
-                    <span class="date-number">15</span>
-                    <span class="date-month">AGOSTO</span>
-                    <span class="date-year">2026</span>
+                <div class="std-header">
+                    <span class="script-font std-day">Sábado</span>
+                    <span class="serif-font std-month">AGOSTO</span>
                 </div>
-                <div id="countdown" class="countdown-elegant">
+                <div class="std-date-large">
+                    <span class="serif-font std-number">15</span>
+                    <span class="serif-font std-year">2026</span>
+                </div>
+                <div class="std-divider"></div>
+                <h2 class="script-font std-title-cursive">Save the Date</h2>
+                
+                <div id="countdown" class="countdown-reference">
                     <div class="time-box"><span id="days">00</span><small>DÍAS</small></div>
-                    <div class="time-box"><span id="hours">00</span><small>HRS</small></div>
-                    <div class="time-box"><span id="minutes">00</span><small>MIN</small></div>
-                    <div class="time-box"><span id="seconds">00</span><small>SEG</small></div>
+                    <div class="time-box separator">:</div>
+                    <div class="time-box"><span id="hours">00</span><small>HORAS</small></div>
+                    <div class="time-box separator">:</div>
+                    <div class="time-box"><span id="minutes">00</span><small>MINUTOS</small></div>
+                    <div class="time-box separator">:</div>
+                    <div class="time-box"><span id="seconds">00</span><small>SEGUNDOS</small></div>
                 </div>
             </div>
         </div>
@@ -84,7 +80,7 @@
 
     <section class="story-section">
         <div class="container" data-aos="fade-up">
-            <div class="story-layout-elegant">
+            <div class="story-layout-mobile">
                 <div class="story-image-wrapper">
                     <img src="foto1.jpeg" alt="Mi historia">
                 </div>
@@ -101,25 +97,12 @@
     <section class="gallery-section">
         <div class="container">
             <p class="section-top-label">HIGHLIGHTS</p>
-            <p class="click-hint">(Haz clic para ampliar)</p>
             
-            <div class="gallery-grid-tall">
-                <div class="gallery-card" data-aos="fade-up">
-                    <img src="foto2.jpeg" alt="Foto 1">
-                    <div class="overlay-hover"><p>+</p></div>
-                </div>
-                <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="foto3.jpeg" alt="Foto 2">
-                    <div class="overlay-hover"><p>+</p></div>
-                </div>
-                <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="foto5.jpeg" alt="Foto 3">
-                    <div class="overlay-hover"><p>+</p></div>
-                </div>
-                <div class="gallery-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="foto6.jpeg" alt="Foto 4">
-                    <div class="overlay-hover"><p>+</p></div>
-                </div>
+            <div class="gallery-grid-medium">
+                <div class="gallery-card" data-aos="fade-up"><img src="foto2.jpeg" alt="Foto 1"></div>
+                <div class="gallery-card" data-aos="fade-up" data-aos-delay="100"><img src="foto3.jpeg" alt="Foto 2"></div>
+                <div class="gallery-card" data-aos="fade-up" data-aos-delay="200"><img src="foto4.jpeg" alt="Foto 3"></div>
+                <div class="gallery-card" data-aos="fade-up" data-aos-delay="300"><img src="flamear.jpeg" alt="Foto 4"></div>
             </div>
         </div>
     </section>
@@ -158,48 +141,52 @@
                     <p class="wish-author">— Primos Gzz</p>
                 </div>
             </div>
-            <a href="https://wa.me/528112345678" class="btn-outline-dark">DEJAR MENSAJE</a>
+            <a href="https://wa.me/5211111111" class="btn-outline-dark">DEJAR MENSAJE</a>
         </div>
     </section>
 
-    <section class="qr-section">
-        <div class="qr-container" data-aos="zoom-in">
-            <div class="qr-text">
-                <h2 class="serif-title">Share the Love</h2>
-                <p>Ayúdame a capturar cada momento. Escanea y sube tus fotos.</p>
-            </div>
-            <div class="qr-code-box">
-                <img src="frameqr.jpeg" alt="QR Code">
-                <span>ESCANEA AQUÍ</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="rsvp-section-bg">
-        <div class="rsvp-floating-card" data-aos="fade-up">
-            <h2 class="script-font rsvp-title">Confirmar Asistencia</h2>
-            <p class="rsvp-subtitle">Favor de confirmar antes del 1 de Agosto</p>
-            
-            <form id="rsvpForm" class="rsvp-form-elegant">
-                <div class="form-group">
-                    <input type="text" id="guestName" required placeholder=" " autocomplete="off">
-                    <label for="guestName">Nombre Completo</label>
-                    <div class="line"></div>
+    <section class="qr-section-styled">
+        <div class="container" data-aos="zoom-in">
+            <div class="qr-card-styled">
+                <div class="qr-text-styled">
+                    <h2 class="serif-title">Comparte el Amor</h2>
+                    <p>Ayúdame a capturar cada momento desde tu perspectiva. Escanea y sube tus fotos.</p>
                 </div>
+                <div class="qr-code-box-styled">
+                    <img src="frame_qr.png" alt="QR Code">
+                    <span>ESCANEA AQUÍ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp-section-parallax">
+        <div class="rsvp-overlay">
+            <div class="rsvp-floating-card" data-aos="fade-up">
+                <h2 class="script-font rsvp-title">Confirmar Asistencia</h2>
+                <p class="rsvp-subtitle">Favor de confirmar antes del 1 de Agosto</p>
                 
-                <div class="form-group">
-                    <select id="attendance" required>
-                        <option value="" disabled selected></option>
-                        <option value="si">¡Claro! Ahí estaré ✨</option>
-                        <option value="no">No podré asistir</option>
-                    </select>
-                    <label for="attendance">¿Asistirás?</label>
-                    <div class="line"></div>
-                </div>
-                 
-                <button type="submit" class="btn-confirm-gold">ENVIAR CONFIRMACIÓN</button>
-            </form>
-            <p class="rsvp-footer">NO NIÑOS - GRACIAS POR SU COMPRENSIÓN</p>
+                <form id="rsvpForm" class="rsvp-form-elegant">
+                    <div class="form-group">
+                        <input type="text" id="guestName" required placeholder=" " autocomplete="off">
+                        <label for="guestName">Nombre Completo</label>
+                        <div class="line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="attendance" required>
+                            <option value="" disabled selected></option>
+                            <option value="si">¡Claro! Ahí estaré ✨</option>
+                            <option value="no">No podré asistir 😿</option>
+                        </select>
+                        <label for="attendance">¿Asistirás?</label>
+                        <div class="line"></div>
+                    </div>
+                     
+                    <button type="submit" class="btn-confirm-gold">ENVIAR CONFIRMACIÓN</button>
+                </form>
+                <p class="rsvp-footer">NO NIÑOS - GRACIAS POR SU COMPRENSIÓN</p>
+            </div>
         </div>
     </section>
 
