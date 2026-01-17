@@ -8,7 +8,7 @@
     --text-dark: #4a4a4a;
     --text-light: #888888;
     
-    /* TIPOGRAFÍAS CONTROLADAS (3 PRINCIPALES) */
+    /* TIPOGRAFÍAS CONTROLADAS */
     --font-script: 'Great Vibes', cursive;
     --font-title: 'Playfair Display', serif;
     --font-body: 'Cormorant Garamond', serif; 
@@ -54,7 +54,7 @@ body {
 .hero-details { display: flex; justify-content: center; align-items: center; gap: 15px; font-family: var(--font-title); letter-spacing: 2px; font-size: 1.1rem; }
 .detail-separator { color: var(--rose-dusty); font-size: 1.5rem; }
 
-/* --- PADRES (Diseño Compacto) --- */
+/* --- PADRES --- */
 .parents-section { padding: 90px 20px; background: var(--bg-white); text-align: center; }
 .intro-styled { font-size: 2.5rem; color: var(--rose-dusty); margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin-left: auto; margin-right: auto; }
 .parents-grid-compact { 
@@ -66,57 +66,45 @@ body {
 .ornament-divider { color: var(--rose-dusty); font-size: 1.5rem; margin: 10px 0; opacity: 0.6; }
 
 
-/* --- SAVE THE DATE (REDISEÑADO CON LÍNEAS) --- */
+/* --- SAVE THE DATE (POSICIONADO ABAJO + FONDO FIJO) --- */
 .save-the-date-parallax, .rsvp-section-parallax {
-    background-image: url('foto2.jpeg'); 
+    background-image: url('foto_std.jpeg'); 
     background-position: center; background-size: cover;
-    background-attachment: fixed; 
-    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background-attachment: fixed; /* Efecto Parallax Fijo */
+    height: 100vh; display: flex; 
+    /* Quitamos align-items center global aquí */
+    justify-content: center;
 }
-.std-overlay, .rsvp-overlay { background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+.std-overlay, .rsvp-overlay { 
+    background: rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; 
+    justify-content: center; 
+}
+
+/* ESTILO ESPECÍFICO PARA BAJAR EL SAVE THE DATE */
+.save-the-date-parallax .std-overlay {
+    align-items: flex-end; /* Alinea el contenido al fondo */
+    padding-bottom: 15vh; /* Espacio desde el borde inferior (usamos VH para que se adapte a la altura de la pantalla) */
+}
+
+/* El RSVP se mantiene centrado */
+.rsvp-section-parallax .rsvp-overlay {
+    align-items: center;
+}
+
 .std-content { text-align: center; color: white; max-width: 700px; width: 95%; }
 
-/* NUEVA REJILLA SUPERIOR CON LÍNEA VERTICAL */
-.std-top-grid {
-    display: flex; justify-content: center; align-items: center;
-    margin-bottom: 10px;
-}
-.std-col-left, .std-col-right {
-    display: flex; flex-direction: column;
-    padding: 0 30px; /* Espacio alrededor de la línea vertical */
-}
+.std-top-grid { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; }
+.std-col-left, .std-col-right { display: flex; flex-direction: column; padding: 0 30px; }
 .std-col-left { text-align: right; align-items: flex-end; }
 .std-col-right { text-align: left; align-items: flex-start; }
-
-/* LÍNEA VERTICAL SÓLIDA */
-.std-vertical-line {
-    width: 2px;
-    height: 120px; /* Altura ajustable según el contenido */
-    background-color: white;
-    opacity: 0.9;
-}
-
-/* Estilos de textos superiores */
+.std-vertical-line { width: 2px; height: 120px; background-color: white; opacity: 0.9; }
 .std-day { font-size: 3.5rem; color: #fff; line-height: 1; margin-bottom: 5px; }
 .std-number { font-size: 6rem; font-weight: 700; line-height: 1; }
 .std-month { font-size: 2.5rem; letter-spacing: 3px; font-weight: 400; line-height: 1; margin-top: 10px; }
 .std-year { font-size: 6rem; font-weight: 400; line-height: 1; }
-
-/* NUEVA LÍNEA HORIZONTAL ONDULADA (WAVY) */
-.std-wavy-divider {
-    width: 80%;
-    height: 30px;
-    margin: 20px auto 30px auto;
-    /* Usamos un SVG inline para crear la curva elegante */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,12 C75,0 225,25 300,12' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.8;
-}
-
+.std-wavy-divider { width: 80%; height: 30px; margin: 20px auto 30px auto; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,12 C75,0 225,25 300,12' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.8; }
 .std-title-cursive { font-size: 5.5rem; margin: 0 0 30px 0; line-height: 1; color: #fff; }
-
 .countdown-reference { display: flex; justify-content: center; gap: 15px; }
 .time-box span { font-family: var(--font-title); font-size: 3.5rem; display: block; line-height: 1; font-weight: 400; }
 .time-box small { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; display: block; }
@@ -196,12 +184,14 @@ body {
 .close-modal:hover { color: var(--rose-dusty); }
 @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
 
-/* --- MEDIA QUERIES --- */
+/* --- MEDIA QUERIES (OPTIMIZADO MÓVIL) --- */
 @media (max-width: 768px) {
-    .hero { padding-bottom: 120px; align-items: flex-end; }
+    body { font-size: 16px; } /* Ajuste base para móvil */
+    .hero { padding-bottom: 100px; align-items: flex-end; }
     .hero-title { font-size: 5.5rem; line-height: 0.9; }
     
-    /* Ajustes Save the Date Móvil */
+    /* Ajustes Save the Date Móvil - Manteniendo posición abajo */
+    .save-the-date-parallax .std-overlay { padding-bottom: 10vh; }
     .std-day { font-size: 2.5rem; }
     .std-number { font-size: 4rem; }
     .std-month { font-size: 1.8rem; }
@@ -211,14 +201,18 @@ body {
     .std-title-cursive { font-size: 3.5rem; }
     .time-box span { font-size: 2.2rem; }
     .separator { font-size: 2.2rem; }
+    /* Parallax Fix Móvil: Evita problemas en iOS */
     .save-the-date-parallax, .rsvp-section-parallax { background-attachment: scroll; }
 
+    /* Resto de ajustes móviles (igual que antes) */
     .story-layout-mobile { flex-direction: column; gap: 30px; }
     .story-image-wrapper { width: 100%; height: 350px; }
     .story-image-wrapper::before { top: 15px; left: 15px; }
     .gallery-grid-medium { gap: 10px; }
     .gallery-card { height: 250px; }
     .qr-card-styled { flex-direction: column; text-align: center; gap: 30px; padding: 30px; }
-    .guestbook-slider { justify-content: flex-start; flex-wrap: nowrap; padding-bottom: 20px; }
+    .guestbook-slider { justify-content: flex-start; flex-wrap: nowrap; padding-bottom: 20px; -webkit-overflow-scrolling: touch; }
     .wish-card { min-width: 280px; }
+    .rsvp-floating-card { padding: 40px 25px; }
+    .rsvp-title { font-size: 3rem; }
 }
