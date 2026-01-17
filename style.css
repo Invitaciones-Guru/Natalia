@@ -8,10 +8,10 @@
     --text-dark: #4a4a4a;       /* Gris oscuro para lectura */
     --text-light: #888888;
     
-    /* TIPOGRAFÍAS */
-    --font-script: 'Alex Brush', cursive;
-    --font-title: 'Playfair Display', serif;
-    --font-body: 'Cormorant Garamond', serif; 
+    /* TIPOGRAFÍAS CONTROLADAS (3 PRINCIPALES) */
+    --font-script: 'Great Vibes', cursive; /* Cursiva más grande y legible */
+    --font-title: 'Playfair Display', serif; /* Títulos elegantes */
+    --font-body: 'Cormorant Garamond', serif; /* Cuerpo de texto */
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -29,6 +29,7 @@ body {
 /* --- UTILIDADES --- */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
 .script-font { font-family: var(--font-script); font-weight: 400; }
+.serif-font { font-family: var(--font-title); }
 .section-title { font-size: 3.5rem; color: var(--rose-dusty); margin-bottom: 10px; text-align: center; line-height: 1; }
 .section-desc { text-align: center; color: var(--text-light); margin-bottom: 40px; font-style: italic; }
 .role-label { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-champagne); margin-bottom: 10px; font-weight: 600; }
@@ -44,7 +45,7 @@ body {
 }
 .music-player:hover { transform: scale(1.05); }
 
-/* --- HERO (PORTADA DE IMPACTO) --- */
+/* --- HERO (PORTADA) --- */
 .hero { 
     height: 100vh; 
     /* Degradado inferior oscuro para que el texto blanco resalte */
@@ -77,61 +78,55 @@ body {
 }
 .detail-separator { color: var(--rose-dusty); font-size: 1.5rem; }
 
-.scroll-indicator {
-    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-    color: white; font-size: 1.5rem; animation: bounce 2s infinite; opacity: 0.7;
-}
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);} 40% {transform: translateX(-50%) translateY(-10px);} }
-
-
-/* --- PADRES (ELEGANCIA RECUPERADA) --- */
+/* --- PADRES (Diseño Compacto) --- */
 .parents-section { padding: 90px 20px; background: var(--bg-white); text-align: center; }
-.intro-styled { font-size: 2.2rem; color: var(--rose-dusty); margin-bottom: 40px; }
+.intro-styled { font-size: 2.5rem; color: var(--rose-dusty); margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-.parents-card-layout { 
-    background: var(--bg-ivory); padding: 50px 30px; 
+.parents-grid-compact { 
+    background: var(--bg-ivory); padding: 40px 30px; 
     border: 1px solid #eee; border-radius: 8px;
-    max-width: 800px; margin: 0 auto 40px auto;
-    display: flex; flex-direction: column; gap: 30px;
+    max-width: 600px; margin: 0 auto 40px auto;
+    display: flex; flex-direction: column; gap: 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
 
-.parent-name { font-family: var(--font-title); font-size: 1.8rem; margin: 5px 0; color: var(--text-dark); font-weight: 400; }
+.parent-name { font-family: var(--font-title); font-size: 1.6rem; margin: 5px 0; color: var(--text-dark); font-weight: 400; }
 .ornament-divider { color: var(--rose-dusty); font-size: 1.5rem; margin: 10px 0; opacity: 0.6; }
-.invite-text { font-style: italic; font-size: 1.2rem; color: var(--text-light); }
 
 
-/* --- SAVE THE DATE --- */
-.save-the-date-parallax {
-    background-image: url('foto8.jpeg'); 
+/* --- SAVE THE DATE (Diseño Referencia + Parallax Fijo) --- */
+.save-the-date-parallax, .rsvp-section-parallax {
+    background-image: url('foto_std.jpeg'); /* Imagen de fondo fija */
     background-position: center; background-size: cover;
-    background-attachment: fixed; /* Parallax en desktop */
+    background-attachment: fixed; /* Efecto Parallax Fijo */
     height: 100vh; display: flex; align-items: center; justify-content: center;
 }
-.std-overlay { background: rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.std-overlay, .rsvp-overlay { background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
 .std-content { 
-    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3); padding: 50px; 
     text-align: center; color: white; max-width: 600px; width: 90%;
 }
-.std-title { font-size: 5rem; margin: 0; line-height: 1; }
-.std-date-display { 
-    font-family: var(--font-title); font-size: 2rem; margin: 20px 0; 
-    border-top: 1px solid rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.5);
-    padding: 10px 0; display: flex; justify-content: center; gap: 15px;
-}
-.countdown-elegant { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
-.time-box span { font-family: var(--font-title); font-size: 2rem; display: block; line-height: 1; }
-.time-box small { font-size: 0.6rem; letter-spacing: 2px; }
+.std-header { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin-bottom: 5px; }
+.std-day { font-size: 3rem; color: #fff; }
+.std-month { font-size: 2.5rem; letter-spacing: 3px; font-weight: 400; }
+.std-date-large { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin-bottom: 20px; line-height: 1; }
+.std-number { font-size: 7rem; font-weight: 700; }
+.std-year { font-size: 7rem; font-weight: 400; }
+.std-divider { width: 60%; height: 1px; background: rgba(255,255,255,0.6); margin: 0 auto 20px auto; }
+.std-title-cursive { font-size: 5rem; margin: 0 0 30px 0; line-height: 1; color: #fff; }
+
+.countdown-reference { display: flex; justify-content: center; gap: 15px; }
+.time-box span { font-family: var(--font-title); font-size: 3.5rem; display: block; line-height: 1; font-weight: 400; }
+.time-box small { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; display: block; }
+.separator { font-size: 3.5rem; line-height: 1; align-self: flex-start; }
 
 
-/* --- HISTORIA (DISEÑO BONITO) --- */
+/* --- HISTORIA (Diseño Móvil Optimizado) --- */
 .story-section { padding: 100px 0; background: var(--bg-white); }
-.story-layout-elegant { 
-    display: flex; align-items: center; gap: 50px; 
-    max-width: 900px; margin: 0 auto;
+.story-layout-mobile { 
+    display: flex; flex-direction: column; align-items: center; gap: 40px; 
+    max-width: 800px; margin: 0 auto; text-align: center;
 }
-.story-image-wrapper { flex: 1; height: 500px; position: relative; }
+.story-image-wrapper { width: 100%; max-width: 500px; height: 400px; position: relative; }
 /* Marco decorativo */
 .story-image-wrapper::before {
     content: ''; position: absolute; top: -15px; left: -15px; 
@@ -139,38 +134,29 @@ body {
 }
 .story-image-wrapper img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
 
-.story-content-wrapper { flex: 1; text-align: left; }
+.story-content-wrapper { max-width: 600px; padding: 0 20px; }
 .story-subtitle { letter-spacing: 3px; color: var(--gold-champagne); font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
 .story-body { font-size: 1.25rem; margin-bottom: 30px; }
-.signature-font { font-family: var(--font-script); font-size: 3rem; color: var(--rose-dusty); text-align: right; margin: 0; }
+.signature-font { font-family: var(--font-script); font-size: 3.5rem; color: var(--rose-dusty); margin: 0; }
 
 
-/* --- GALERÍA 4 FOTOS LARGAS --- */
+/* --- GALERÍA (Altura Media, Sin Texto Clic) --- */
 .gallery-section { padding: 80px 20px; background: var(--bg-ivory); }
-.section-top-label { text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 5px; font-weight: 600; }
-.click-hint { text-align: center; font-size: 0.8rem; color: #aaa; margin-bottom: 40px; font-style: italic; }
+.section-top-label { text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 30px; font-weight: 600; }
 
-.gallery-grid-tall { 
+.gallery-grid-medium { 
     display: grid; grid-template-columns: repeat(2, 1fr); /* 2 columnas */
     gap: 20px; max-width: 1000px; margin: 0 auto; 
 }
 
 .gallery-card { 
     position: relative; 
-    height: 550px; /* Fotos muy altas y elegantes */
+    height: 350px; /* Altura media para ver completa */
     overflow: hidden; border-radius: 4px; cursor: pointer;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-.overlay-hover {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center;
-    opacity: 0; transition: 0.3s;
-}
-.overlay-hover p { color: white; font-size: 3rem; font-weight: 100; }
-
 .gallery-card:hover img { transform: scale(1.05); }
-.gallery-card:hover .overlay-hover { opacity: 1; }
 
 
 /* --- REGALOS --- */
@@ -214,26 +200,23 @@ body {
 }
 .btn-outline-dark:hover { background: var(--text-dark); color: white; }
 
-/* --- ÁLBUM QR --- */
-.qr-section { background: white; padding: 80px 20px; }
-.qr-container { 
+/* --- ÁLBUM QR (Diseño Enriquecido) --- */
+.qr-section-styled { background: white; padding: 80px 20px; }
+.qr-card-styled { 
     display: flex; align-items: center; justify-content: center; gap: 50px; 
-    max-width: 800px; margin: 0 auto; border: 1px dashed #ddd; padding: 40px; border-radius: 8px;
+    max-width: 800px; margin: 0 auto; background: var(--bg-ivory); padding: 50px; border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee;
 }
-.qr-text h2 { font-size: 2.5rem; margin-bottom: 10px; color: var(--text-dark); }
-.qr-code-box { text-align: center; }
-.qr-code-box img { width: 130px; margin-bottom: 10px; }
-.qr-code-box span { display: block; font-size: 0.7rem; letter-spacing: 2px; }
+.qr-text-styled h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text-dark); }
+.qr-code-box-styled { text-align: center; background: white; padding: 20px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.qr-code-box-styled img { width: 140px; margin-bottom: 10px; }
+.qr-code-box-styled span { display: block; font-size: 0.75rem; letter-spacing: 2px; font-weight: 600; color: var(--gold-champagne); }
 
-/* --- RSVP (FLOTANTE) --- */
-.rsvp-section-bg { 
-    padding: 100px 20px; 
-    background: url('fondo_flores.jpeg') center/cover;
-    display: flex; justify-content: center;
-}
+
+/* --- RSVP (Tarjeta Flotante sobre Fondo Fijo) --- */
 .rsvp-floating-card { 
     background: white; padding: 60px 40px; border-radius: 8px; 
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2); 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3); 
     width: 100%; max-width: 550px; text-align: center; 
     border-top: 5px solid var(--rose-dusty);
 }
@@ -273,7 +256,7 @@ body {
 
 /* --- FOOTER --- */
 .footer-elegant { padding: 60px 20px; text-align: center; background: var(--bg-ivory); color: var(--rose-dusty); }
-.footer-elegant h2 { font-size: 3rem; margin: 0; }
+.footer-elegant h2 { font-size: 3.5rem; margin: 0; }
 
 /* --- MODAL (LIGHTBOX) --- */
 .modal {
@@ -297,25 +280,29 @@ body {
     .hero-details { font-size: 0.9rem; }
 
     /* Layouts a Columna */
-    .story-layout-elegant { flex-direction: column; }
-    .story-image-wrapper { width: 100%; height: 400px; }
+    .story-layout-mobile { flex-direction: column; gap: 30px; }
+    .story-image-wrapper { width: 100%; height: 350px; }
     .story-image-wrapper::before { top: 15px; left: 15px; } /* Ajuste borde */
     .story-content-wrapper { text-align: center; padding: 0 10px; }
-    .signature-font { text-align: center; }
-
+    
     /* Galería Móvil */
-    .gallery-grid-tall { gap: 10px; }
-    .gallery-card { height: 350px; } /* Siguen siendo altas pero ajustadas */
+    .gallery-grid-medium { gap: 10px; }
+    .gallery-card { height: 250px; } /* Altura media en móvil */
     
     /* QR Section */
-    .qr-container { flex-direction: column; text-align: center; gap: 30px; }
+    .qr-card-styled { flex-direction: column; text-align: center; gap: 30px; padding: 30px; }
     
     /* Guestbook Scroll */
     .guestbook-slider { justify-content: flex-start; flex-wrap: nowrap; padding-bottom: 20px; }
     .wish-card { min-width: 280px; }
     
-    /* Parallax Fix */
-    .save-the-date-parallax { background-attachment: scroll; }
+    /* Parallax Fix Móvil (Desactiva efecto fijo para evitar problemas) */
+    .save-the-date-parallax, .rsvp-section-parallax { background-attachment: scroll; }
     
-    .std-title { font-size: 3.5rem; }
+    .std-title-cursive { font-size: 3.5rem; }
+    .std-day { font-size: 2.5rem; }
+    .std-month { font-size: 2rem; }
+    .std-number, .std-year { font-size: 5rem; }
+    .time-box span { font-size: 2.5rem; }
+    .separator { font-size: 2.5rem; }
 }
