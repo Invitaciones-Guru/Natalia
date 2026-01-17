@@ -1,29 +1,24 @@
 :root {
     /* PALETA DE COLORES PREMIUM */
-    --bg-ivory: #faf8f5;        /* Fondo crema muy suave */
+    --bg-ivory: #faf8f5;
     --bg-white: #ffffff;
-    --rose-dusty: #b48692;      /* Rosa viejo elegante (Principal) */
-    --rose-dark: #966b76;       /* Rosa oscuro para textos */
-    --gold-champagne: #c5a059;  /* Dorado suave para detalles */
-    --text-dark: #4a4a4a;       /* Gris oscuro para lectura */
+    --rose-dusty: #b48692;
+    --rose-dark: #966b76;
+    --gold-champagne: #c5a059;
+    --text-dark: #4a4a4a;
     --text-light: #888888;
     
     /* TIPOGRAFÍAS CONTROLADAS (3 PRINCIPALES) */
-    --font-script: 'Great Vibes', cursive; /* Cursiva más grande y legible */
-    --font-title: 'Playfair Display', serif; /* Títulos elegantes */
-    --font-body: 'Cormorant Garamond', serif; /* Cuerpo de texto */
+    --font-script: 'Great Vibes', cursive;
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Cormorant Garamond', serif; 
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 body { 
-    margin: 0; 
-    font-family: var(--font-body); 
-    background: var(--bg-ivory); 
-    color: var(--text-dark); 
-    overflow-x: hidden; 
-    line-height: 1.6;
-    font-size: 18px; /* Tamaño base elegante */
+    margin: 0; font-family: var(--font-body); background: var(--bg-ivory); 
+    color: var(--text-dark); overflow-x: hidden; line-height: 1.6; font-size: 18px;
 }
 
 /* --- UTILIDADES --- */
@@ -48,261 +43,182 @@ body {
 /* --- HERO (PORTADA) --- */
 .hero { 
     height: 100vh; 
-    /* Degradado inferior oscuro para que el texto blanco resalte */
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 100%), 
                 url('portada.jpeg') center/cover no-repeat;
-    display: flex; 
-    align-items: flex-end; /* Alineado abajo */
-    justify-content: center; 
-    text-align: center; 
-    color: white;
-    padding-bottom: 80px; /* Espacio desde abajo */
-    position: relative;
+    display: flex; align-items: flex-end; justify-content: center; 
+    text-align: center; color: white; padding-bottom: 80px; position: relative;
 }
-
 .hero-content { width: 100%; max-width: 900px; padding: 0 20px; }
 .hero-subtitle { font-size: 1rem; letter-spacing: 6px; margin-bottom: 0; font-weight: 400; opacity: 0.9; }
-
-/* NOMBRE GIGANTE */
-.hero-title { 
-    font-size: 7rem; /* Base para desktop */
-    margin: 10px 0; 
-    line-height: 0.9; 
-    text-shadow: 0 4px 20px rgba(0,0,0,0.3); 
-    color: #fff;
-}
-
-.hero-details { 
-    display: flex; justify-content: center; align-items: center; gap: 15px; 
-    font-family: var(--font-title); letter-spacing: 2px; font-size: 1.1rem;
-}
+.hero-title { font-size: 7rem; margin: 10px 0; line-height: 0.9; text-shadow: 0 4px 20px rgba(0,0,0,0.3); color: #fff; }
+.hero-details { display: flex; justify-content: center; align-items: center; gap: 15px; font-family: var(--font-title); letter-spacing: 2px; font-size: 1.1rem; }
 .detail-separator { color: var(--rose-dusty); font-size: 1.5rem; }
 
 /* --- PADRES (Diseño Compacto) --- */
 .parents-section { padding: 90px 20px; background: var(--bg-white); text-align: center; }
 .intro-styled { font-size: 2.5rem; color: var(--rose-dusty); margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin-left: auto; margin-right: auto; }
-
 .parents-grid-compact { 
-    background: var(--bg-ivory); padding: 40px 30px; 
-    border: 1px solid #eee; border-radius: 8px;
-    max-width: 600px; margin: 0 auto 40px auto;
-    display: flex; flex-direction: column; gap: 25px;
+    background: var(--bg-ivory); padding: 40px 30px; border: 1px solid #eee; border-radius: 8px;
+    max-width: 600px; margin: 0 auto 40px auto; display: flex; flex-direction: column; gap: 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
-
 .parent-name { font-family: var(--font-title); font-size: 1.6rem; margin: 5px 0; color: var(--text-dark); font-weight: 400; }
 .ornament-divider { color: var(--rose-dusty); font-size: 1.5rem; margin: 10px 0; opacity: 0.6; }
 
 
-/* --- SAVE THE DATE (Diseño Referencia + Parallax Fijo) --- */
+/* --- SAVE THE DATE (REDISEÑADO CON LÍNEAS) --- */
 .save-the-date-parallax, .rsvp-section-parallax {
-    background-image: url('foto2.jpeg'); /* Imagen de fondo fija */
+    background-image: url('foto2.jpeg'); 
     background-position: center; background-size: cover;
-    background-attachment: fixed; /* Efecto Parallax Fijo */
+    background-attachment: fixed; 
     height: 100vh; display: flex; align-items: center; justify-content: center;
 }
 .std-overlay, .rsvp-overlay { background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-.std-content { 
-    text-align: center; color: white; max-width: 600px; width: 90%;
+.std-content { text-align: center; color: white; max-width: 700px; width: 95%; }
+
+/* NUEVA REJILLA SUPERIOR CON LÍNEA VERTICAL */
+.std-top-grid {
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 10px;
 }
-.std-header { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin-bottom: 5px; }
-.std-day { font-size: 3rem; color: #fff; }
-.std-month { font-size: 2.5rem; letter-spacing: 3px; font-weight: 400; }
-.std-date-large { display: flex; justify-content: center; align-items: baseline; gap: 15px; margin-bottom: 20px; line-height: 1; }
-.std-number { font-size: 7rem; font-weight: 700; }
-.std-year { font-size: 7rem; font-weight: 400; }
-.std-divider { width: 60%; height: 1px; background: rgba(255,255,255,0.6); margin: 0 auto 20px auto; }
-.std-title-cursive { font-size: 5rem; margin: 0 0 30px 0; line-height: 1; color: #fff; }
+.std-col-left, .std-col-right {
+    display: flex; flex-direction: column;
+    padding: 0 30px; /* Espacio alrededor de la línea vertical */
+}
+.std-col-left { text-align: right; align-items: flex-end; }
+.std-col-right { text-align: left; align-items: flex-start; }
+
+/* LÍNEA VERTICAL SÓLIDA */
+.std-vertical-line {
+    width: 2px;
+    height: 120px; /* Altura ajustable según el contenido */
+    background-color: white;
+    opacity: 0.9;
+}
+
+/* Estilos de textos superiores */
+.std-day { font-size: 3.5rem; color: #fff; line-height: 1; margin-bottom: 5px; }
+.std-number { font-size: 6rem; font-weight: 700; line-height: 1; }
+.std-month { font-size: 2.5rem; letter-spacing: 3px; font-weight: 400; line-height: 1; margin-top: 10px; }
+.std-year { font-size: 6rem; font-weight: 400; line-height: 1; }
+
+/* NUEVA LÍNEA HORIZONTAL ONDULADA (WAVY) */
+.std-wavy-divider {
+    width: 80%;
+    height: 30px;
+    margin: 20px auto 30px auto;
+    /* Usamos un SVG inline para crear la curva elegante */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,12 C75,0 225,25 300,12' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+}
+
+.std-title-cursive { font-size: 5.5rem; margin: 0 0 30px 0; line-height: 1; color: #fff; }
 
 .countdown-reference { display: flex; justify-content: center; gap: 15px; }
 .time-box span { font-family: var(--font-title); font-size: 3.5rem; display: block; line-height: 1; font-weight: 400; }
-.time-box small { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; display: block; }
-.separator { font-size: 3.5rem; line-height: 1; align-self: flex-start; }
+.time-box small { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; display: block; }
+.separator { font-size: 3.5rem; line-height: 1; align-self: flex-start; margin-top: 5px; }
 
 
-/* --- HISTORIA (Diseño Móvil Optimizado) --- */
+/* --- HISTORIA --- */
 .story-section { padding: 100px 0; background: var(--bg-white); }
-.story-layout-mobile { 
-    display: flex; flex-direction: column; align-items: center; gap: 40px; 
-    max-width: 800px; margin: 0 auto; text-align: center;
-}
+.story-layout-mobile { display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 800px; margin: 0 auto; text-align: center; }
 .story-image-wrapper { width: 100%; max-width: 500px; height: 400px; position: relative; }
-/* Marco decorativo */
-.story-image-wrapper::before {
-    content: ''; position: absolute; top: -15px; left: -15px; 
-    width: 100%; height: 100%; border: 1px solid var(--rose-dusty); z-index: 0;
-}
+.story-image-wrapper::before { content: ''; position: absolute; top: -15px; left: -15px; width: 100%; height: 100%; border: 1px solid var(--rose-dusty); z-index: 0; }
 .story-image-wrapper img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-
 .story-content-wrapper { max-width: 600px; padding: 0 20px; }
 .story-subtitle { letter-spacing: 3px; color: var(--gold-champagne); font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
 .story-body { font-size: 1.25rem; margin-bottom: 30px; }
 .signature-font { font-family: var(--font-script); font-size: 3.5rem; color: var(--rose-dusty); margin: 0; }
 
-
-/* --- GALERÍA (Altura Media, Sin Texto Clic) --- */
+/* --- GALERÍA --- */
 .gallery-section { padding: 80px 20px; background: var(--bg-ivory); }
-.section-top-label { text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 30px; font-weight: 600; }
-
-.gallery-grid-medium { 
-    display: grid; grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    gap: 20px; max-width: 1000px; margin: 0 auto; 
-}
-
-.gallery-card { 
-    position: relative; 
-    height: 350px; /* Altura media para ver completa */
-    overflow: hidden; border-radius: 4px; cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
+.section-top-label { text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 40px; font-weight: 600; }
+.gallery-grid-medium { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.gallery-card { position: relative; height: 350px; overflow: hidden; border-radius: 4px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
 .gallery-card:hover img { transform: scale(1.05); }
-
 
 /* --- REGALOS --- */
 .gifts-section { padding: 90px 20px; background: var(--bg-white); }
 .gift-cards-wrapper { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.gift-box { 
-    background: var(--bg-ivory); padding: 40px; border-radius: 8px; 
-    flex: 1; min-width: 280px; max-width: 400px; text-align: center;
-    border: 1px solid transparent; transition: 0.3s;
-}
+.gift-box { background: var(--bg-ivory); padding: 40px; border-radius: 8px; flex: 1; min-width: 280px; max-width: 400px; text-align: center; border: 1px solid transparent; transition: 0.3s; }
 .gift-box:hover { border-color: var(--rose-dusty); background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
 .gift-icon { font-size: 2.5rem; margin-bottom: 20px; }
 .gift-box h3 { font-family: var(--font-title); font-size: 1.4rem; color: var(--rose-dark); margin-bottom: 10px; }
 .bank-info { font-weight: 600; margin-bottom: 15px; }
-
-.btn-elegant { 
-    background: var(--rose-dusty); color: white; border: none;
-    padding: 12px 30px; border-radius: 30px; cursor: pointer; font-size: 0.75rem; 
-    letter-spacing: 2px; transition: 0.3s;
-}
+.btn-elegant { background: var(--rose-dusty); color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; }
 .btn-elegant:hover { background: var(--rose-dark); }
-
 
 /* --- GUESTBOOK --- */
 .guestbook-section { padding: 90px 20px; background: var(--bg-ivory); text-align: center; }
-.guestbook-slider { 
-    display: flex; gap: 20px; overflow-x: auto; padding: 20px 0 40px 0; 
-    justify-content: center; flex-wrap: wrap; /* En desktop wrap, mobile scroll */
-}
-.wish-card { 
-    background: white; padding: 30px; width: 300px; 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-radius: 2px; text-align: left;
-}
+.guestbook-slider { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0 40px 0; justify-content: center; flex-wrap: wrap; }
+.wish-card { background: white; padding: 30px; width: 300px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-radius: 2px; text-align: left; }
 .wish-text { font-style: italic; font-family: var(--font-title); color: #555; font-size: 1.1rem; }
 .wish-author { margin-top: 15px; text-align: right; font-size: 0.8rem; font-weight: 600; color: var(--rose-dusty); }
-
-.btn-outline-dark { 
-    display: inline-block; border: 1px solid var(--text-dark); color: var(--text-dark);
-    padding: 12px 35px; border-radius: 50px; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px;
-    transition: 0.3s;
-}
+.btn-outline-dark { display: inline-block; border: 1px solid var(--text-dark); color: var(--text-dark); padding: 12px 35px; border-radius: 50px; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; }
 .btn-outline-dark:hover { background: var(--text-dark); color: white; }
 
-/* --- ÁLBUM QR (Diseño Enriquecido) --- */
+/* --- ÁLBUM QR --- */
 .qr-section-styled { background: white; padding: 80px 20px; }
-.qr-card-styled { 
-    display: flex; align-items: center; justify-content: center; gap: 50px; 
-    max-width: 800px; margin: 0 auto; background: var(--bg-ivory); padding: 50px; border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee;
-}
+.qr-card-styled { display: flex; align-items: center; justify-content: center; gap: 50px; max-width: 800px; margin: 0 auto; background: var(--bg-ivory); padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee; }
 .qr-text-styled h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text-dark); }
 .qr-code-box-styled { text-align: center; background: white; padding: 20px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .qr-code-box-styled img { width: 140px; margin-bottom: 10px; }
 .qr-code-box-styled span { display: block; font-size: 0.75rem; letter-spacing: 2px; font-weight: 600; color: var(--gold-champagne); }
 
-
-/* --- RSVP (Tarjeta Flotante sobre Fondo Fijo) --- */
-.rsvp-floating-card { 
-    background: white; padding: 60px 40px; border-radius: 8px; 
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3); 
-    width: 100%; max-width: 550px; text-align: center; 
-    border-top: 5px solid var(--rose-dusty);
-}
+/* --- RSVP --- */
+.rsvp-floating-card { background: white; padding: 60px 40px; border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); width: 100%; max-width: 550px; text-align: center; border-top: 5px solid var(--rose-dusty); }
 .rsvp-title { font-size: 4rem; color: var(--rose-dusty); margin: 0; line-height: 1.2; }
 .rsvp-subtitle { color: #999; margin-bottom: 40px; font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; }
-
-/* FORMULARIO ELEGANTE (LÍNEAS) */
 .rsvp-form-elegant { width: 100%; }
 .form-group { position: relative; margin-bottom: 35px; text-align: left; }
-.form-group input, .form-group select { 
-    width: 100%; padding: 10px 0; border: none; background: transparent;
-    font-family: var(--font-body); font-size: 1.2rem; color: var(--text-dark);
-    outline: none;
-}
-.form-group .line { 
-    height: 1px; width: 100%; background: #ddd; position: absolute; bottom: 0; 
-    transition: 0.3s;
-}
+.form-group input, .form-group select { width: 100%; padding: 10px 0; border: none; background: transparent; font-family: var(--font-body); font-size: 1.2rem; color: var(--text-dark); outline: none; }
+.form-group .line { height: 1px; width: 100%; background: #ddd; position: absolute; bottom: 0; transition: 0.3s; }
 .form-group input:focus ~ .line, .form-group select:focus ~ .line { background: var(--rose-dusty); height: 2px; }
-
-.form-group label { 
-    position: absolute; top: 10px; left: 0; color: #aaa; transition: 0.2s; pointer-events: none;
-}
-.form-group input:focus ~ label, .form-group input:not(:placeholder-shown) ~ label, 
-.form-group select:focus ~ label, .form-group select:valid ~ label {
-    top: -15px; font-size: 0.8rem; color: var(--rose-dusty); font-weight: 600;
-}
-
-.btn-confirm-gold { 
-    background: var(--rose-dusty); color: white; border: none; padding: 18px; width: 100%;
-    font-size: 0.9rem; letter-spacing: 3px; font-weight: 600; cursor: pointer; margin-top: 10px;
-    transition: 0.3s;
-}
+.form-group label { position: absolute; top: 10px; left: 0; color: #aaa; transition: 0.2s; pointer-events: none; }
+.form-group input:focus ~ label, .form-group input:not(:placeholder-shown) ~ label, .form-group select:focus ~ label, .form-group select:valid ~ label { top: -15px; font-size: 0.8rem; color: var(--rose-dusty); font-weight: 600; }
+.btn-confirm-gold { background: var(--rose-dusty); color: white; border: none; padding: 18px; width: 100%; font-size: 0.9rem; letter-spacing: 3px; font-weight: 600; cursor: pointer; margin-top: 10px; transition: 0.3s; }
 .btn-confirm-gold:hover { background: var(--rose-dark); box-shadow: 0 10px 20px rgba(180, 134, 146, 0.3); }
 .rsvp-footer { margin-top: 30px; font-size: 0.7rem; letter-spacing: 2px; color: #ccc; }
-
 
 /* --- FOOTER --- */
 .footer-elegant { padding: 60px 20px; text-align: center; background: var(--bg-ivory); color: var(--rose-dusty); }
 .footer-elegant h2 { font-size: 3.5rem; margin: 0; }
 
-/* --- MODAL (LIGHTBOX) --- */
-.modal {
-    display: none; position: fixed; z-index: 2000; left: 0; top: 0;
-    width: 100%; height: 100%; overflow: hidden;
-    background-color: rgba(0,0,0,0.95);
-    align-items: center; justify-content: center;
-    animation: fadeIn 0.4s;
-}
+/* --- MODAL --- */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,0.95); align-items: center; justify-content: center; animation: fadeIn 0.4s; }
 .modal-content { max-width: 90%; max-height: 90vh; border-radius: 4px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
 .close-modal { position: absolute; top: 30px; right: 40px; color: #f1f1f1; font-size: 50px; cursor: pointer; transition: 0.3s; }
 .close-modal:hover { color: var(--rose-dusty); }
 @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
 
-
-/* --- MEDIA QUERIES (OPTIMIZADO MÓVIL) --- */
+/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
-    /* Hero Texto Gigante Móvil */
     .hero { padding-bottom: 120px; align-items: flex-end; }
     .hero-title { font-size: 5.5rem; line-height: 0.9; }
-    .hero-details { font-size: 0.9rem; }
+    
+    /* Ajustes Save the Date Móvil */
+    .std-day { font-size: 2.5rem; }
+    .std-number { font-size: 4rem; }
+    .std-month { font-size: 1.8rem; }
+    .std-year { font-size: 4rem; }
+    .std-vertical-line { height: 90px; padding: 0 15px; }
+    .std-col-left, .std-col-right { padding: 0 15px; }
+    .std-title-cursive { font-size: 3.5rem; }
+    .time-box span { font-size: 2.2rem; }
+    .separator { font-size: 2.2rem; }
+    .save-the-date-parallax, .rsvp-section-parallax { background-attachment: scroll; }
 
-    /* Layouts a Columna */
     .story-layout-mobile { flex-direction: column; gap: 30px; }
     .story-image-wrapper { width: 100%; height: 350px; }
-    .story-image-wrapper::before { top: 15px; left: 15px; } /* Ajuste borde */
-    .story-content-wrapper { text-align: center; padding: 0 10px; }
-    
-    /* Galería Móvil */
+    .story-image-wrapper::before { top: 15px; left: 15px; }
     .gallery-grid-medium { gap: 10px; }
-    .gallery-card { height: 250px; } /* Altura media en móvil */
-    
-    /* QR Section */
+    .gallery-card { height: 250px; }
     .qr-card-styled { flex-direction: column; text-align: center; gap: 30px; padding: 30px; }
-    
-    /* Guestbook Scroll */
     .guestbook-slider { justify-content: flex-start; flex-wrap: nowrap; padding-bottom: 20px; }
     .wish-card { min-width: 280px; }
-    
-    /* Parallax Fix Móvil (Desactiva efecto fijo para evitar problemas) */
-    .save-the-date-parallax, .rsvp-section-parallax { background-attachment: scroll; }
-    
-    .std-title-cursive { font-size: 3.5rem; }
-    .std-day { font-size: 2.5rem; }
-    .std-month { font-size: 2rem; }
-    .std-number, .std-year { font-size: 5rem; }
-    .time-box span { font-size: 2.5rem; }
-    .separator { font-size: 2.5rem; }
 }
