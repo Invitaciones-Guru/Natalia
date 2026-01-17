@@ -47,6 +47,7 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     const asistencia = document.getElementById('attendance').value;
     
     let mensaje = asistencia === "si" ? `Hola Valentina, soy ${nombre}. ¡Sí asistiré a tus XVs! 💃` : `Hola Valentina, soy ${nombre}. No podré asistir, gracias por la invitación.`;
+    // REEMPLAZA EL NÚMERO AQUÍ: 52 + Lada + Número
     window.open(`https://wa.me/528112345678?text=${encodeURIComponent(mensaje)}`, '_blank');
 };
 
