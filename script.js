@@ -17,6 +17,7 @@ const musicBtn = document.getElementById('musicBtn');
 const music = document.getElementById('weddingMusic');
 let isPlaying = false; 
 
+// Autoplay al tocar pantalla
 document.body.addEventListener('click', function() {
     if (!isPlaying) {
         music.play().then(() => {
