@@ -208,13 +208,30 @@ body::before {
     align-items: center; /* El RSVP sí va centrado */
 }
 
-/* Aseguramos que las otras secciones tengan color sólido para tapar la foto de fondo */
-.hero, .parents-section, .story-section, .gallery-section, 
-.gifts-section, .guestbook-section, .qr-section-styled, .footer-elegant {
+/* 1. SECCIONES CON FONDO COLOR CREMA (Quitamos .hero de aquí) */
+.parents-section, .story-section, .gallery-section, 
+.guestbook-section, .qr-section-styled, .footer-elegant {
     position: relative;
     z-index: 1;
-    background: var(--bg-ivory); /* O el color que corresponda */
+    background: var(--bg-ivory);
 }
+
+/* 2. SECCIONES CON FONDO BLANCO */
+.parents-section, .gifts-section { 
+    position: relative;
+    z-index: 1;
+    background: var(--bg-white); 
+}
+
+/* 3. LA PORTADA (HERO) - Aquí le devolvemos su foto */
+.hero {
+    position: relative;
+    z-index: 1;
+    /* Aseguramos que tenga su fondo propio y no sea transparente */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 100%), 
+                url('portada.jpeg') center/cover no-repeat;
+}
+
 .parents-section, .gifts-section { background: var(--bg-white); }
 
 
