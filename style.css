@@ -108,7 +108,7 @@ body {
 
 /* GALERÍA */
 .gallery-section { padding: 80px 20px; background: var(--bg-ivory); }
-.section-top-label { text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 40px; font-weight: 600; }
+.section-top-label { font-size: 2rem; text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 30px; font-weight: 600; }
 .gallery-grid-medium { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
 .gallery-card { position: relative; height: 350px; overflow: hidden; border-radius: 4px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
