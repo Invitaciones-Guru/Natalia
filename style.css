@@ -58,7 +58,7 @@ body {
 
 /* PADRES */
 .parents-section { padding: 90px 20px; background: var(--bg-white); text-align: center; }
-.intro-styled { font-size: 1rem; color: var(--rose-dusty); margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin-left: auto; margin-right: auto; }
+.intro-styled { font-size: 1.7rem; color: var(--rose-dusty); margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin-left: auto; margin-right: auto; }
 .parents-grid-compact { 
     background: var(--bg-ivory); padding: 40px 30px; border: 1px solid #eee; border-radius: 8px;
     max-width: 600px; margin: 0 auto 40px auto; display: flex; flex-direction: column; gap: 25px;
