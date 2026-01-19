@@ -72,3 +72,40 @@ closeBtn.onclick = closeModal;
 modal.onclick = function(e) { if (e.target !== modalImg) closeModal(); }
 
 AOS.init({ once: true, duration: 1000, offset: 60 });
+
+// ... (todo tu código anterior de countdown, música, etc.)
+
+closeBtn.onclick = closeModal;
+modal.onclick = function(e) { if (e.target !== modalImg) closeModal(); }
+
+
+// --- NUEVO: CAMBIO DE FONDO FIJO AL LLEGAR A RSVP ---
+const rsvpSection = document.querySelector('.rsvp-section-parallax');
+const bodyEl = document.body;
+
+// Configuración: el cambio ocurre cuando el 15% de la sección RSVP es visible
+const observerOptions = {
+    root: null,
+    threshold: 0.15
+};
+
+// Crear el observador
+const bgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // ¡Entramos a RSVP! Agrega la clase que cambia la foto a la 8
+            bodyEl.classList.add('bg-rsvp');
+        } else {
+            // Salimos de RSVP. Quita la clase para volver a la foto 2
+            bodyEl.classList.remove('bg-rsvp');
+        }
+    });
+}, observerOptions);
+
+// Activar el observador en la sección RSVP
+bgObserver.observe(rsvpSection);
+
+
+// INICIALIZAR AOS AL FINAL
+AOS.init({ once: true, duration: 1000, offset: 60 });
+
