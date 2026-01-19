@@ -1,5 +1,4 @@
 :root {
-    /* PALETA DE COLORES PREMIUM */
     --bg-ivory: #faf8f5;
     --bg-white: #ffffff;
     --rose-dusty: #b48692;
@@ -8,7 +7,6 @@
     --text-dark: #4a4a4a;
     --text-light: #888888;
     
-    /* TIPOGRAFÍAS CONTROLADAS */
     --font-script: 'Great Vibes', cursive;
     --font-title: 'Playfair Display', serif;
     --font-body: 'Cormorant Garamond', serif; 
@@ -21,7 +19,6 @@ body {
     color: var(--text-dark); overflow-x: hidden; line-height: 1.6; font-size: 18px;
 }
 
-/* --- UTILIDADES --- */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
 .script-font { font-family: var(--font-script); font-weight: 400; }
 .serif-font { font-family: var(--font-title); }
@@ -29,7 +26,7 @@ body {
 .section-desc { text-align: center; color: var(--text-light); margin-bottom: 40px; font-style: italic; }
 .role-label { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-champagne); margin-bottom: 10px; font-weight: 600; }
 
-/* --- REPRODUCTOR --- */
+/* REPRODUCTOR */
 .music-player {
     position: fixed; top: 20px; right: 20px; z-index: 1000;
     background: rgba(255,255,255,0.85); padding: 10px 18px;
@@ -40,7 +37,7 @@ body {
 }
 .music-player:hover { transform: scale(1.05); }
 
-/* --- HERO (PORTADA) --- */
+/* HERO */
 .hero { 
     height: 100vh; 
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 100%), 
@@ -54,7 +51,7 @@ body {
 .hero-details { display: flex; justify-content: center; align-items: center; gap: 15px; font-family: var(--font-title); letter-spacing: 2px; font-size: 1.1rem; }
 .detail-separator { color: var(--rose-dusty); font-size: 1.5rem; }
 
-/* --- PADRES --- */
+/* PADRES */
 .parents-section { padding: 90px 20px; background: var(--bg-white); text-align: center; }
 .intro-styled { font-size: 2.5rem; color: var(--rose-dusty); margin-bottom: 40px; line-height: 1.2; max-width: 800px; margin-left: auto; margin-right: auto; }
 .parents-grid-compact { 
@@ -65,53 +62,53 @@ body {
 .parent-name { font-family: var(--font-title); font-size: 1.6rem; margin: 5px 0; color: var(--text-dark); font-weight: 400; }
 .ornament-divider { color: var(--rose-dusty); font-size: 1.5rem; margin: 10px 0; opacity: 0.6; }
 
-
-/* --- SAVE THE DATE (POSICIONADO ABAJO + FONDO FIJO) --- */
+/* SAVE THE DATE - LÍNEAS FINAS CORREGIDAS */
 .save-the-date-parallax, .rsvp-section-parallax {
     background-image: url('foto2.jpeg'); 
     background-position: center; background-size: cover;
-    background-attachment: fixed; /* Efecto Parallax Fijo */
+    background-attachment: fixed; 
     height: 100vh; display: flex; 
-    /* Quitamos align-items center global aquí */
     justify-content: center;
 }
-
-.std-overlay, .rsvp-overlay { 
-    background: rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; 
-    justify-content: center; 
-}
-
-/* ESTILO ESPECÍFICO PARA BAJAR EL SAVE THE DATE */
-.save-the-date-parallax .std-overlay {
-    align-items: flex-end; /* Alinea el contenido al fondo */
-    padding-bottom: 15vh; /* Espacio desde el borde inferior (usamos VH para que se adapte a la altura de la pantalla) */
-}
-
-/* El RSVP se mantiene centrado */
-.rsvp-section-parallax .rsvp-overlay {
-    align-items: center;
-}
-
+.save-the-date-parallax .std-overlay { align-items: flex-end; padding-bottom: 15vh; }
+.rsvp-section-parallax .rsvp-overlay { align-items: center; }
+.std-overlay, .rsvp-overlay { background: rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; justify-content: center; }
 .std-content { text-align: center; color: white; max-width: 700px; width: 95%; }
 
 .std-top-grid { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; }
-.std-col-left, .std-col-right { display: flex; flex-direction: column; padding: 0 30px; }
+
+/* Ajuste de padding para acercar texto a la línea fina */
+.std-col-left, .std-col-right { display: flex; flex-direction: column; padding: 0 10px; }
 .std-col-left { text-align: right; align-items: flex-end; }
 .std-col-right { text-align: left; align-items: flex-start; }
-.std-vertical-line { width: 2px; height: 120px; background-color: white; opacity: 0.9; }
+
+/* LÍNEA VERTICAL MUY FINA */
+.std-vertical-line { 
+    width: 1px; /* Grosor corregido a 1px */
+    height: 110px; 
+    background-color: rgba(255,255,255,0.9); 
+    margin: 0 5px; /* Margen reducido */
+}
+
 .std-day { font-size: 3.5rem; color: #fff; line-height: 1; margin-bottom: 5px; }
 .std-number { font-size: 6rem; font-weight: 700; line-height: 1; }
 .std-month { font-size: 2.5rem; letter-spacing: 3px; font-weight: 400; line-height: 1; margin-top: 10px; }
 .std-year { font-size: 6rem; font-weight: 400; line-height: 1; }
-.std-wavy-divider { width: 80%; height: 30px; margin: 20px auto 30px auto; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,12 C75,0 225,25 300,12' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.8; }
+
+/* LÍNEA ONDULADA MÁS FINA (Stroke-width 1) */
+.std-wavy-divider { 
+    width: 80%; height: 20px; margin: 15px auto 25px auto; 
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,12 C75,0 225,25 300,12' fill='none' stroke='white' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E"); 
+    background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.8; 
+}
+
 .std-title-cursive { font-size: 5.5rem; margin: 0 0 30px 0; line-height: 1; color: #fff; }
 .countdown-reference { display: flex; justify-content: center; gap: 15px; }
 .time-box span { font-family: var(--font-title); font-size: 3.5rem; display: block; line-height: 1; font-weight: 400; }
 .time-box small { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; display: block; }
 .separator { font-size: 3.5rem; line-height: 1; align-self: flex-start; margin-top: 5px; }
 
-
-/* --- HISTORIA --- */
+/* HISTORIA */
 .story-section { padding: 100px 0; background: var(--bg-white); }
 .story-layout-mobile { display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 800px; margin: 0 auto; text-align: center; }
 .story-image-wrapper { width: 100%; max-width: 500px; height: 400px; position: relative; }
@@ -122,7 +119,7 @@ body {
 .story-body { font-size: 1.25rem; margin-bottom: 30px; }
 .signature-font { font-family: var(--font-script); font-size: 3.5rem; color: var(--rose-dusty); margin: 0; }
 
-/* --- GALERÍA --- */
+/* GALERÍA */
 .gallery-section { padding: 80px 20px; background: var(--bg-ivory); }
 .section-top-label { text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 40px; font-weight: 600; }
 .gallery-grid-medium { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
@@ -130,7 +127,7 @@ body {
 .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
 .gallery-card:hover img { transform: scale(1.05); }
 
-/* --- REGALOS --- */
+/* REGALOS */
 .gifts-section { padding: 90px 20px; background: var(--bg-white); }
 .gift-cards-wrapper { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 .gift-box { background: var(--bg-ivory); padding: 40px; border-radius: 8px; flex: 1; min-width: 280px; max-width: 400px; text-align: center; border: 1px solid transparent; transition: 0.3s; }
@@ -141,7 +138,7 @@ body {
 .btn-elegant { background: var(--rose-dusty); color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; }
 .btn-elegant:hover { background: var(--rose-dark); }
 
-/* --- GUESTBOOK --- */
+/* GUESTBOOK */
 .guestbook-section { padding: 90px 20px; background: var(--bg-ivory); text-align: center; }
 .guestbook-slider { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0 40px 0; justify-content: center; flex-wrap: wrap; }
 .wish-card { background: white; padding: 30px; width: 300px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-radius: 2px; text-align: left; }
@@ -150,7 +147,7 @@ body {
 .btn-outline-dark { display: inline-block; border: 1px solid var(--text-dark); color: var(--text-dark); padding: 12px 35px; border-radius: 50px; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; }
 .btn-outline-dark:hover { background: var(--text-dark); color: white; }
 
-/* --- ÁLBUM QR --- */
+/* QR */
 .qr-section-styled { background: white; padding: 80px 20px; }
 .qr-card-styled { display: flex; align-items: center; justify-content: center; gap: 50px; max-width: 800px; margin: 0 auto; background: var(--bg-ivory); padding: 50px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #eee; }
 .qr-text-styled h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text-dark); }
@@ -158,7 +155,7 @@ body {
 .qr-code-box-styled img { width: 140px; margin-bottom: 10px; }
 .qr-code-box-styled span { display: block; font-size: 0.75rem; letter-spacing: 2px; font-weight: 600; color: var(--gold-champagne); }
 
-/* --- RSVP --- */
+/* RSVP */
 .rsvp-floating-card { background: white; padding: 60px 40px; border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); width: 100%; max-width: 550px; text-align: center; border-top: 5px solid var(--rose-dusty); }
 .rsvp-title { font-size: 4rem; color: var(--rose-dusty); margin: 0; line-height: 1.2; }
 .rsvp-subtitle { color: #999; margin-bottom: 40px; font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; }
@@ -173,38 +170,40 @@ body {
 .btn-confirm-gold:hover { background: var(--rose-dark); box-shadow: 0 10px 20px rgba(180, 134, 146, 0.3); }
 .rsvp-footer { margin-top: 30px; font-size: 0.7rem; letter-spacing: 2px; color: #ccc; }
 
-/* --- FOOTER --- */
+/* FOOTER */
 .footer-elegant { padding: 60px 20px; text-align: center; background: var(--bg-ivory); color: var(--rose-dusty); }
 .footer-elegant h2 { font-size: 3.5rem; margin: 0; }
 
-/* --- MODAL --- */
+/* MODAL */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,0.95); align-items: center; justify-content: center; animation: fadeIn 0.4s; }
 .modal-content { max-width: 90%; max-height: 90vh; border-radius: 4px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
 .close-modal { position: absolute; top: 30px; right: 40px; color: #f1f1f1; font-size: 50px; cursor: pointer; transition: 0.3s; }
 .close-modal:hover { color: var(--rose-dusty); }
 @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
 
-/* --- MEDIA QUERIES (OPTIMIZADO MÓVIL) --- */
+/* MEDIA QUERIES (OPTIMIZACIÓN CELULAR) */
 @media (max-width: 768px) {
-    body { font-size: 16px; } /* Ajuste base para móvil */
-    .hero { padding-bottom: 100px; align-items: flex-end; }
+    .hero { padding-bottom: 120px; align-items: flex-end; }
     .hero-title { font-size: 5.5rem; line-height: 0.9; }
     
-    /* Ajustes Save the Date Móvil - Manteniendo posición abajo */
+    /* OPTIMIZACIÓN SAVE THE DATE MÓVIL */
     .save-the-date-parallax .std-overlay { padding-bottom: 10vh; }
-    .std-day { font-size: 2.5rem; }
-    .std-number { font-size: 4rem; }
-    .std-month { font-size: 1.8rem; }
-    .std-year { font-size: 4rem; }
-    .std-vertical-line { height: 90px; padding: 0 15px; }
-    .std-col-left, .std-col-right { padding: 0 15px; }
+    
+    /* Tamaño de fuentes un poco más chico para que no choque con la línea */
+    .std-day { font-size: 2rem; }
+    .std-number { font-size: 3.5rem; }
+    .std-month { font-size: 1.5rem; }
+    .std-year { font-size: 3.5rem; }
+    .std-vertical-line { height: 80px; padding: 0 10px; }
+    
     .std-title-cursive { font-size: 3.5rem; }
-    .time-box span { font-size: 2.2rem; }
-    .separator { font-size: 2.2rem; }
-    /* Parallax Fix Móvil: Evita problemas en iOS */
-    .save-the-date-parallax, .rsvp-section-parallax { background-attachment: scroll; }
+    .time-box span { font-size: 2rem; }
+    .separator { font-size: 2rem; }
 
-    /* Resto de ajustes móviles (igual que antes) */
+    /* Mantenemos fixed si se puede, pero algunos celulares lo bloquean */
+    .save-the-date-parallax, .rsvp-section-parallax { background-attachment: fixed; }
+
+    /* Ajustes generales */
     .story-layout-mobile { flex-direction: column; gap: 30px; }
     .story-image-wrapper { width: 100%; height: 350px; }
     .story-image-wrapper::before { top: 15px; left: 15px; }
