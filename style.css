@@ -62,25 +62,8 @@ body {
 .parent-name { font-family: var(--font-title); font-size: 1.6rem; margin: 5px 0; color: var(--text-dark); font-weight: 400; }
 .ornament-divider { color: var(--rose-dusty); font-size: 1.5rem; margin: 10px 0; opacity: 0.6; }
 
-/* SAVE THE DATE - LÍNEAS FINAS CORREGIDAS */
-.save-the-date-parallax, .rsvp-section-parallax {
-    background-image: url('foto2.jpeg'); 
-    background-position: center; background-size: cover;
-    background-attachment: fixed; 
-    height: 100vh; display: flex; 
-    justify-content: center;
-}
-.save-the-date-parallax .std-overlay { align-items: flex-end; padding-bottom: 15vh; }
-.rsvp-section-parallax .rsvp-overlay { align-items: center; }
-.std-overlay, .rsvp-overlay { background: rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; justify-content: center; }
-.std-content { text-align: center; color: white; max-width: 700px; width: 95%; }
 
-.std-top-grid { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; }
 
-/* Ajuste de padding para acercar texto a la línea fina */
-.std-col-left, .std-col-right { display: flex; flex-direction: column; padding: 0 10px; }
-.std-col-left { text-align: right; align-items: flex-end; }
-.std-col-right { text-align: left; align-items: flex-start; }
 
 /* LÍNEA VERTICAL MUY FINA */
 .std-vertical-line { 
@@ -181,27 +164,158 @@ body {
 .close-modal:hover { color: var(--rose-dusty); }
 @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
 
-/* MEDIA QUERIES (OPTIMIZACIÓN CELULAR) */
+/* =========================================
+   TRUCO PARA FONDO FIJO EN CELULAR (PARALLAX REAL)
+   ========================================= */
+/* Esto pone la foto 'foto2.jpeg' fija detrás de toda la página */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: url('foto2.jpeg') center/cover no-repeat;
+    z-index: -1; /* Se queda al fondo */
+}
+
+/* Hacemos transparentes las secciones donde queremos ver la foto */
+.save-the-date-parallax, .rsvp-section-parallax {
+    background: transparent !important; /* Importante para borrar cualquier otro fondo */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* El contenido debe alinearse al fondo (abajo) */
+.save-the-date-parallax .std-overlay {
+    background: rgba(0,0,0,0.4); /* Capa oscura */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* ESTO BAJA EL CONTENIDO */
+    padding-bottom: 15vh; /* Espacio desde el borde inferior */
+}
+
+.rsvp-section-parallax .rsvp-overlay {
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* El RSVP sí va centrado */
+}
+
+/* Aseguramos que las otras secciones tengan color sólido para tapar la foto de fondo */
+.hero, .parents-section, .story-section, .gallery-section, 
+.gifts-section, .guestbook-section, .qr-section-styled, .footer-elegant {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-ivory); /* O el color que corresponda */
+}
+.parents-section, .gifts-section { background: var(--bg-white); }
+
+
+/* =========================================
+   ESTILOS SAVE THE DATE (LÍNEA FINA ARREGLADA)
+   ========================================= */
+.std-content { 
+    text-align: center; 
+    color: white; 
+    max-width: 700px; 
+    width: 95%; 
+}
+
+.std-top-grid { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.std-col-left, .std-col-right { 
+    display: flex; 
+    flex-direction: column; 
+    padding: 0 10px; 
+}
+
+.std-col-left { text-align: right; align-items: flex-end; }
+.std-col-right { text-align: left; align-items: flex-start; }
+
+/* AQUÍ ESTÁ EL ARREGLO DE LA LÍNEA GORDA */
+.std-vertical-line { 
+    width: 1px;       /* Ancho deseado */
+    min-width: 1px;   /* Obliga al celular a respetar el ancho */
+    flex: 0 0 1px;    /* Evita que flexbox la estire */
+    height: 90px;     /* Altura controlada */
+    background-color: rgba(255,255,255,0.9); 
+    margin: 0 15px; 
+}
+
+/* Textos Superiores */
+.std-day { font-size: 3rem; color: #fff; line-height: 1; margin-bottom: 5px; }
+.std-number { font-size: 5rem; font-weight: 700; line-height: 1; }
+.std-month { font-size: 2rem; letter-spacing: 3px; font-weight: 400; line-height: 1; margin-top: 5px; }
+.std-year { font-size: 5rem; font-weight: 400; line-height: 1; }
+
+/* Línea Ondulada Fina */
+.std-wavy-divider { 
+    width: 80%; height: 20px; margin: 10px auto 20px auto; 
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,12 C75,0 225,25 300,12' fill='none' stroke='white' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E"); 
+    background-repeat: no-repeat; background-position: center; background-size: contain; opacity: 0.8; 
+}
+
+.std-title-cursive { font-size: 4.5rem; margin: 0 0 20px 0; line-height: 1; color: #fff; }
+
+/* Reloj */
+.countdown-reference { display: flex; justify-content: center; gap: 10px; }
+.time-box span { font-family: var(--font-title); font-size: 2.5rem; display: block; line-height: 1; font-weight: 400; }
+.time-box small { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; display: block; }
+.separator { font-size: 2.5rem; line-height: 1; align-self: flex-start; margin-top: 5px; }
+
+
+/* =========================================
+   OPTIMIZACIÓN TOTAL PARA CELULAR
+   ========================================= */
 @media (max-width: 768px) {
+    /* Ajustes generales */
+    body { font-size: 16px; }
+    
+    /* Hero */
     .hero { padding-bottom: 120px; align-items: flex-end; }
     .hero-title { font-size: 5.5rem; line-height: 0.9; }
-    
-    /* OPTIMIZACIÓN SAVE THE DATE MÓVIL */
-    .save-the-date-parallax .std-overlay { padding-bottom: 10vh; }
-    
-    /* Tamaño de fuentes un poco más chico para que no choque con la línea */
-    .std-day { font-size: 2rem; }
-    .std-number { font-size: 3.5rem; }
-    .std-month { font-size: 1.5rem; }
-    .std-year { font-size: 3.5rem; }
-    .std-vertical-line { height: 80px; padding: 0 10px; }
-    
-    .std-title-cursive { font-size: 3.5rem; }
-    .time-box span { font-size: 2rem; }
-    .separator { font-size: 2rem; }
 
-    /* Mantenemos fixed si se puede, pero algunos celulares lo bloquean */
-    .save-the-date-parallax, .rsvp-section-parallax { background-attachment: fixed; }
+    /* AJUSTES FINOS SAVE THE DATE MÓVIL */
+    .save-the-date-parallax .std-overlay { 
+        padding-bottom: 12vh; /* Un poco más arriba para que no pegue con la barra del cel */
+    }
+    
+    .std-day { font-size: 2.2rem; }
+    .std-number { font-size: 3.8rem; }
+    .std-month { font-size: 1.4rem; letter-spacing: 2px; }
+    .std-year { font-size: 3.8rem; }
+    
+    /* Línea vertical más corta en celular */
+    .std-vertical-line { height: 70px; margin: 0 10px; }
+    
+    .std-title-cursive { font-size: 3.2rem; }
+    
+    .time-box span { font-size: 1.8rem; }
+    .separator { font-size: 1.8rem; }
+    .time-box small { font-size: 0.5rem; letter-spacing: 1px; }
+
+    /* Arreglos de otras secciones */
+    .story-layout-mobile { flex-direction: column; gap: 30px; }
+    .story-image-wrapper { width: 100%; height: 350px; }
+    .gallery-grid-medium { gap: 10px; }
+    .gallery-card { height: 250px; }
+    .qr-card-styled { padding: 30px 20px; }
+    .guestbook-slider { justify-content: flex-start; padding-bottom: 20px; -webkit-overflow-scrolling: touch; }
+    .rsvp-floating-card { padding: 40px 20px; }
+}
+
 
     /* Ajustes generales */
     .story-layout-mobile { flex-direction: column; gap: 30px; }
