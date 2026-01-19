@@ -6,11 +6,15 @@
     --gold-champagne: #c5a059;
     --text-dark: #4a4a4a;
     --text-light: #888888;
-    
+
+    --fixed-bg-image: url('foto8.jpeg'); /* Imagen por defecto (Save the Date) */
+
     --font-script: 'Great Vibes', cursive;
     --font-title: 'Playfair Display', serif;
     --font-body: 'Cormorant Garamond', serif; 
 }
+
+
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
@@ -164,20 +168,26 @@ body {
 .close-modal:hover { color: var(--rose-dusty); }
 @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
 
+
 /* =========================================
    TRUCO PARA FONDO FIJO EN CELULAR (PARALLAX REAL)
    ========================================= */
-/* Esto pone la foto 'foto2.jpeg' fija detrás de toda la página */
+/* Esto pone la foto fija detrás de toda la página */
 body::before {
     content: "";
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: url('foto8.jpeg') center/cover no-repeat;
-    z-index: -1; /* Se queda al fondo */
+    top: 0; left: 0; width: 100%; height: 100%;
+    
+    /* --- CAMBIO AQUÍ --- */
+    /* En lugar de la url directa, usamos la variable */
+    background: var(--fixed-bg-image) center/cover no-repeat;
+    /* Agregamos transición suave para que no sea un cambio brusco */
+    transition: background-image 0.5s ease-in-out;
+    /* ------------------- */
+    
+    z-index: -1;
 }
+
 
 /* Hacemos transparentes las secciones donde queremos ver la foto */
 .save-the-date-parallax, .rsvp-section-parallax {
@@ -346,3 +356,11 @@ body::before {
     .rsvp-floating-card { padding: 40px 25px; }
     .rsvp-title { font-size: 3rem; }
 }
+
+/* --- AGREGA ESTO AL FINAL DE TU STYLE.CSS --- */
+
+/* Clase que activará JS cuando lleguemos al RSVP */
+body.bg-rsvp {
+    --fixed-bg-image: url('foto8.jpeg'); /* Cambia la variable a la foto 8 */
+}
+
