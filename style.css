@@ -361,6 +361,6 @@ body::before {
 
 /* Clase que activará JS cuando lleguemos al RSVP */
 body.bg-rsvp {
-    --fixed-bg-image: url('foto8.jpeg'); /* Cambia la variable a la foto 8 */
+    --fixed-bg-image: url('foto2.jpeg'); /* Cambia la variable a la foto 8 */
 }
 
