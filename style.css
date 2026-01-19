@@ -107,7 +107,7 @@ body {
 .signature-font { font-family: var(--font-script); font-size: 3.5rem; color: var(--rose-dusty); margin: 0; }
 
 /* GALERÍA */
-.gallery-section { padding: 80px 20px; background: var(--bg-ivory); }
+.gallery-section { padding: 80px 20px; background: #fcf7f0; }
 .section-top-label { font-size: 2rem; text-align: center; letter-spacing: 4px; color: var(--gold-champagne); margin-bottom: 30px; font-weight: 600; }
 .gallery-grid-medium { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
 .gallery-card { position: relative; height: 350px; overflow: hidden; border-radius: 4px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
